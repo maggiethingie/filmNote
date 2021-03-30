@@ -1,7 +1,3 @@
-/* fonts
-  font-family: 'Nunito', sans-serif;
-  font-family: 'Sue Ellen Francisco', cursive;
-*/
 
 .app, .app * {
   margin: 0;
@@ -9,22 +5,22 @@
 	box-sizing: border-box;
   font-size: 62.5%;
   max-width: 95%;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: 'Pacifico', cursive;
   font-size: 3rem;
 }
 
 h2 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 2rem;
 }
 
 button {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
@@ -72,9 +68,35 @@ button:hover {
 	transform: translate(-50%, -50%);
 }
 
-.idea-icon {
+.idea-icon, .close-icon {
   height: 20px;
   cursor: pointer;
-  float: right;
   margin: 5px;
+}
+
+.idea-icon {
+  float: right;
+}
+
+.close-icon {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.ideas h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+}
+
+.ideas {
+  position: fixed;
+  background-color: lightgrey;
+  border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+}
+
+.ideas ul {
+  list-style: none;
 }
