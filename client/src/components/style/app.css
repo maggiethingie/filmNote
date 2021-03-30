@@ -1,0 +1,29 @@
+/* fonts
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Sue Ellen Francisco', cursive;
+*/
+
+.app, .app * {
+  margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-size: 62.5%;
+  max-width: 95%;
+  background-color: lightgrey;
+}
+
+h1 {
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+button {
+  border-radius: 5px;
+  cursor: pointer;
+}

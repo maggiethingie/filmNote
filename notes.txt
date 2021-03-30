@@ -1,0 +1,38 @@
+  <script>
+    window.onLoadCallback = function() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+            client_id: '166265351248-n671isu5alcpaqomoo3uar1j5ovp7agj.apps.googleusercontent.com'
+        }).then(() => renderButton());
+
+        // Attach the click handler to the sign-in button
+        auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
+      });
+    }
+    /**
+     * Handle successful sign-ins.
+     */
+    var onSuccess = function(user) {
+        console.log('Signed in as ' + user.getBasicProfile().getName());
+    };
+
+    /**
+     * Handle sign-in failures.
+     */
+    var onFailure = function(error) {
+        console.log(error);
+    };
+
+    var renderButton = function() {
+      gapi.signin2.render('googleButton',
+      {
+          'scope': 'profile email',
+          'width': 240,
+          'height': 40,
+          'longtitle': true,
+          'theme': 'dark',
+          'onsuccess': () => {},
+          'onfailure': () => {}
+      });
+    }
+  </script>
