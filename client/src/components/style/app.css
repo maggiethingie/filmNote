@@ -9,7 +9,7 @@
 	box-sizing: border-box;
   font-size: 62.5%;
   max-width: 95%;
-  background-color: lightgrey;
+  font-family: 'Nunito', sans-serif;
 }
 
 h1 {
@@ -24,6 +24,57 @@ h2 {
 }
 
 button {
+  font-family: 'Nunito', sans-serif;
   border-radius: 5px;
   cursor: pointer;
+  background-color: white;
+  padding: 1%;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: aquamarine;
+}
+
+.results {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: lightgrey;
+}
+
+.dropdown-item img {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.textarea {
+  width: 800px;
+  height: 500px;
+}
+
+.form {
+  position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.idea-icon {
+  height: 20px;
+  cursor: pointer;
+  float: right;
+  margin: 5px;
 }
