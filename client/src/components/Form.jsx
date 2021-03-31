@@ -45,9 +45,16 @@ class Form extends React.Component {
       Poster
     }
     axios.put('/entries', data)
-    .then(() => {
-      console.log('successfully saved entry!');
-    })
+    .then(() => {})
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  onDelete() {
+    const { filmObj } = this.props;
+    axios.delete(`/entries/${filmObj.entry_id}`)
+    .then(() => {})
     .catch((err) => {
       console.log(err);
     });
@@ -84,6 +91,7 @@ class Form extends React.Component {
           <img onClick={ () => this.onIdeaClick() } className="idea-icon" src="icons/idea.svg" />
           <textarea value={ entry } onChange={ () => this.onEntryChange(event) } className="textarea" rows="50" cols="40" />
           <button onClick={ () => this.onEntrySubmit() }>Save and Exit</button>
+          <button onClick={ () => this.onDelete() }>Delete entry</button>
         </form>
       </div>
     );

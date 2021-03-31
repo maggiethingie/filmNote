@@ -1,35 +1,39 @@
 const Entry = require('./model');
 
 const saveEntry = (req, res) => {
-  console.log('im inside the saveEntry function!');
-  console.log(req.body);
-  const { _id } = req.body;
-  //let entryDoc = new Entry(req.body);
-  //entryDoc.save(req.body, function(err, result) {
-  Entry.findOneAndUpdate({ entry_id: req.body.entry_id }, req.body, {upsert: true, setDefaultsOnInsert: true}, function(err, result) {
+  const { _id, entry_id } = req.body;
+  Entry.findOneAndUpdate({ entry_id }, req.body, {upsert: true, setDefaultsOnInsert: true}, function(err, doc) {
     if (err) {
       res.sendStatus(400);
     } else {
-      console.log('result of saveEntry:', result);
-      res.send(result);
+      res.send(doc);
     }
-  })
+  });
 };
-
-// Model.update({_id: id}, obj, {upsert: true, setDefaultsOnInsert: true}, cb);
 
 const getEntries = (req, res) => {
   Entry.find({}, function (err, docs) {
     if (err) {
       res.sendStatus(400);
     } else {
-      console.log('entries:', docs);
       res.send(docs);
     }
-  })
+  });
 };
+
+const deleteEntry = (req, res) => {
+  const { entry_id } = req.params;
+  Entry.findOneAndRemove({ entry_id }, function (err) {
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+}
 
 module.exports = {
   saveEntry,
-  getEntries
+  getEntries,
+  deleteEntry
 }

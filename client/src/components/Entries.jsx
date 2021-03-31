@@ -32,7 +32,6 @@ class Entries extends React.Component {
   render() {
     const { entries, selectedEntry } = this.state;
     const { user_id } = this.props;
-    console.log(entries);
     return (
       <div>
         { selectedEntry !== null ?
