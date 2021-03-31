@@ -22,12 +22,12 @@ class Home extends React.Component {
     return (
       <div className="home">
         { !hideSearch ?
-          <div className="search-section">
+          <div className="left-column">
             <Search user_id={ user_id } />
           </div> :
           null
         }
-        <div className="entries-section">
+        <div className="right-column">
           <Entries hideSearch={ this.hideSearch } user_id={ user_id } />
         </div>
       </div>

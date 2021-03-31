@@ -32,20 +32,23 @@ class Entries extends React.Component {
   render() {
     const { entries, selectedEntry } = this.state;
     const { user_id } = this.props;
-    console.log(entries);
     return (
       <div>
         { selectedEntry !== null ?
           <Form filmObj={selectedEntry} user_id={user_id} entry={selectedEntry.entry}/> :
-          <div>
-            <h2>Past Entries</h2>
-            {entries.map((entry, index) => (
-              <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
-                <img src={entry.Poster} />
-                <div className="entry-title">{entry.Title} ({entry.Year})</div>
+          <div className="entries-section">
+            <div className="past-entries-header">Past Entries</div>
+            <div className="wrapper">
+              <div className="past-entries-body">
+                {entries.map((entry, index) => (
+                  <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
+                    <img src={entry.Poster} />
+                    <div className="entry-title">{entry.Title} ({entry.Year})</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+            </div>
         }
       </div>
     );

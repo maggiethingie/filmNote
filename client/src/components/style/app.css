@@ -1,10 +1,5 @@
 html {
-  /* background-image: linear-gradient(
-		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)),
-	url(../../../dist/images/movie_tiles.jpeg);
-  background-size: cover;
-  background-attachment: fixed; */
+  font-size: 62.5%;
 }
 .app {
   margin: 0;
@@ -12,65 +7,30 @@ html {
   width: 100vw;
   height: 100vh;
 	box-sizing: border-box;
-  font-size: 62.5%;
   max-width: 95%;
 }
 
+/*
+background-image: linear-gradient(
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)),
+	url(../../../dist/images/vertigo.jpeg);
+*/
+
 * {
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+	padding: 0;
+  box-sizing: border-box;
 }
 
+/*
 h1, h2 {
   font-size: 1.5rem;
 }
-
-.home {
-}
-
-.search-section {
-  display: inline-block;
-  position: fixed;
-	top: 25%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.entries-section {
-  float: right;
-}
-
-.past-entry {
-  display: flex;
-  height: 100px;
-  cursor: pointer;
-  width: 300px;
-  border-radius: 5px;
-}
-
-.past-entry img {
-  height: 90px;
-  margin-right: 10px;
-  border-radius: 5px;
-  align-self: center;
-}
-
-.past-entry .entry-title {
-  align-self: center;
-}
-
-.past-entry:hover {
-  background-color: lightgrey;
-}
-
-.open-button {
-  position: fixed;
-  top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
+*/
 
 button {
-
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
@@ -78,9 +38,71 @@ button {
   font-size: 1.2rem;
 }
 
+/*
 button:hover {
   background-color: lightgrey;
+}
+*/
 
+/* LANDING PAGE */
+.landing-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../../../dist/images/film.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.logo {
+  padding: 20px;
+  color: white;
+  font-size: 2rem;
+}
+
+.message {
+  position: fixed;
+  top: 50%;
+	left: 70%;
+	transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.login-button {
+  background-color:white;
+  border-radius: 50px;
+  font-size: 2rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 5px 50px;
+  border: none;
+}
+
+/* HOME */
+.home {
+  display: grid;
+  grid-template-columns: 80% / 20%;
+  grid-gap: 50px;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f6f6f6;
+}
+
+.left-column {
+  grid-column: 1 / 2;
+}
+
+.right-column {
+  grid-column: 2 / 3;
+}
+
+/* SEARCH */
+.search-section {
+  display: inline-block;
+  position: fixed;
 }
 
 .search-bar {
@@ -112,16 +134,65 @@ button:hover {
   border-radius: 5px;
 }
 
-.textarea {
-  width: 800px;
-  height: 500px;
+/* ENTRIES */
+.entries-section {
+  float: right;
+  position: relative;
+  /* display: inline-grid;
+  grid-template-rows: 10% / 90%; */
 }
 
+.past-entries-header {
+  position: sticky;
+  top: 0;
+  padding: 30px;
+  height: 100px;
+  font-size: 1.5rem;
+  background-color: #f6f6f6;
+  z-index: 2;
+}
+
+.past-entries-body {
+  top: 100px;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.past-entry {
+  display: flex;
+  height: 100px;
+  cursor: pointer;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.past-entry img {
+  height: 90px;
+  margin-right: 10px;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.past-entry .entry-title {
+  align-self: center;
+}
+
+.past-entry:hover {
+  background-color: lightgrey;
+}
+
+/* FORM */
 .form {
   position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.textarea {
+  width: 800px;
+  height: 500px;
 }
 
 .idea-icon, .close-icon {
@@ -145,6 +216,22 @@ button:hover {
   transform: scale(1.2, 1.2);
 }
 
+.poster {
+  height: 100px;
+  border-radius: 5px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.heading-text {
+  font-size: 2rem;
+  align-self: flex-end;
+}
+
+/* IDEAS */
 .ideas h3 {
   font-size: 1.2rem;
 }
@@ -163,17 +250,3 @@ button:hover {
   list-style: none;
 }
 
-.poster {
-  height: 100px;
-  border-radius: 5px;
-}
-
-.heading {
-  display: flex;
-  flex-direction: row;
-}
-
-.heading-text {
-  font-size: 2rem;
-  align-self: flex-end;
-}

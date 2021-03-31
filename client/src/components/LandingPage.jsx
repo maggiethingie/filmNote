@@ -10,10 +10,16 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <button className="open-button" onClick={this.props.enterClick}>
-          <h1>Login to your filmNote journal</h1>
+      <div className="landing-page">
+        <div className="logo">
+          filmNote
+        </div>
+        <button className="login-button" onClick={this.props.enterClick}>
+          log in
         </button>
+        <div className="message">
+          <h1>A journaling application for cinephiles</h1>
+        </div>
       </div>
     )
   }

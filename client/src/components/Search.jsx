@@ -69,7 +69,7 @@ class Search extends React.Component {
       <div>
         {selectionMade ?
           <Form filmObj={filmObj} user_id={user_id} entry={''}/> :
-          <div>
+          <div className="search-section">
             <h2>Search for a title to create a new journal entry</h2>
             <input className="search-bar" onChange={this.handleChange} type="text" />
             <div className="dropdown-menu">
