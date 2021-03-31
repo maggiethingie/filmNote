@@ -12,6 +12,19 @@ const saveEntry = (req, res) => {
 };
 
 const getEntries = (req, res) => {
+  Entry.find({})
+  .sort({updatedAt:-1})
+  .exec((err, docs) => {
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      res.send(docs);
+    }
+  });
+}
+
+/*
+const getEntries = (req, res) => {
   Entry.find({}, function (err, docs) {
     if (err) {
       res.sendStatus(400);
@@ -20,6 +33,7 @@ const getEntries = (req, res) => {
     }
   });
 };
+*/
 
 const deleteEntry = (req, res) => {
   const { entry_id } = req.params;
