@@ -6,16 +6,30 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      hideSearch: false
     };
+    this.hideSearch = this.hideSearch.bind(this);
+  }
+
+  hideSearch() {
+    this.setState({ hideSearch: true });
   }
 
 
   render() {
+    const { hideSearch } = this.state;
+    const { user_id } = this.props;
     return (
-      <div>
-        <Search />
-        <Entries />
+      <div className="home">
+        { !hideSearch ?
+          <div className="search-section">
+            <Search user_id={ user_id } />
+          </div> :
+          null
+        }
+        <div className="entries-section">
+          <Entries hideSearch={ this.hideSearch } user_id={ user_id } />
+        </div>
       </div>
     )
   }

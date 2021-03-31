@@ -1,26 +1,59 @@
-
-.app, .app * {
+html {
+  /* background-image: linear-gradient(
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)),
+	url(../../../dist/images/movie_tiles.jpeg);
+  background-size: cover;
+  background-attachment: fixed; */
+}
+.app {
   margin: 0;
 	padding: 0;
+  width: 100vw;
+  height: 100vh;
 	box-sizing: border-box;
   font-size: 62.5%;
   max-width: 95%;
+}
+
+* {
   font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
-}
-
-h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+h1, h2 {
   font-size: 2rem;
 }
 
+.home {
+  display: grid;
+  grid-template-columns: 70% / 30%;
+}
+
+.search-section {
+  grid-column: 1 / 2;
+}
+
+.entries-section {
+  grid-column: 2 / 3;
+}
+
+.past-entry {
+  cursor: pointer;
+}
+
+.past-entry:hover {
+  background-color: lightgrey;
+}
+
+.open-button {
+  position: fixed;
+  top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 button {
-  font-family: 'Open Sans', sans-serif;
+
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
@@ -29,11 +62,16 @@ button {
 }
 
 button:hover {
-  background-color: aquamarine;
+  background-color: lightgrey;
+
+}
+
+.search-bar {
+  width: 300px;
+  height: 40px;
 }
 
 .results {
-  max-height: 500px;
   overflow-y: scroll;
 }
 
@@ -42,8 +80,9 @@ button:hover {
   align-items: center;
   height: 60px;
   cursor: pointer;
-  width: 200px;
+  width: 300px;
   border-radius: 5px;
+
 }
 
 .dropdown-item:hover {
@@ -72,6 +111,7 @@ button:hover {
   height: 20px;
   cursor: pointer;
   margin: 5px;
+  transition: transform .2s ease-in-out;
 }
 
 .idea-icon {
@@ -84,8 +124,11 @@ button:hover {
   right: 1%;
 }
 
+.idea-icon:hover, .close-icon:hover {
+  transform: scale(1.2, 1.2);
+}
+
 .ideas h3 {
-  font-family: 'Pacifico', cursive;
   font-size: 1.2rem;
 }
 
@@ -93,10 +136,27 @@ button:hover {
   position: fixed;
   background-color: lightgrey;
   border-radius: 20px;
-  font-family: 'Open Sans', sans-serif;
+
   padding: 10px;
+  right: -325px;
+  width: 300px;
 }
 
 .ideas ul {
   list-style: none;
+}
+
+.poster {
+  height: 100px;
+  border-radius: 5px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.heading-text {
+  font-size: 2rem;
+  align-self: flex-end;
 }

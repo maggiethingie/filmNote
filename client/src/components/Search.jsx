@@ -6,14 +6,16 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filmObj: {
-        Poster: "https://m.media-amazon.com/images/M/MV5BMjAxYmJhMTMtNmZlZi00ZWJlLTlmMjctOTg5ZTg4MzZmOWM2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-        Title: "Wild at Heart",
-        Type: "movie",
-        Year: "1990",
-        imdbID: "tt0100935"
-      },
-      selectionMade: true,
+      // filmObj: {
+      //   Poster: "https://m.media-amazon.com/images/M/MV5BMjAxYmJhMTMtNmZlZi00ZWJlLTlmMjctOTg5ZTg4MzZmOWM2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      //   Title: "Wild at Heart",
+      //   Type: "movie",
+      //   Year: "1990",
+      //   imdbID: "tt0100935"
+      // },
+      // selectionMade: true,
+      filmObj: {},
+      selectionMade: false,
       value: '',
       results: []
     };
@@ -58,21 +60,22 @@ class Search extends React.Component {
   }
 
   render() {
+    const { user_id } = this.props;
     const { selectionMade, filmObj } = this.state;
+    const noImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fp.pngarrow.com%2Fb%2F3065%2F30655323.png&f=1&nofb=1';
     let { results } = this.state;
     if (results === undefined) results = [];
-    console.log(results);
     return (
       <div>
         {selectionMade ?
-          <Form filmObj={filmObj} /> :
+          <Form filmObj={filmObj} user_id={user_id} entry={''}/> :
           <div>
-            <h2>Create a new entry</h2>
-            <input onChange={this.handleChange} type="text" />
+            <h2>Search for a title to create a new journal entry</h2>
+            <input className="search-bar" onChange={this.handleChange} type="text" />
             <div className="dropdown-menu">
               <div className="dropdown-content results">
                 {results.map(result => {
-                  const imgURL = result.Poster === 'N/A' ? '' : result.Poster;
+                  const imgURL = result.Poster === 'N/A' ? noImage : result.Poster;
                   return (
                   <a onClick={(e) => this.handleSubmit(e, result)} key={result.imdbID} className="dropdown-item">
                     <img src={imgURL} />

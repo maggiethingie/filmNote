@@ -8,8 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //loggedIn: false
-      loggedIn: true,
+      loggedIn: false,
+      // loggedIn: true,
       user_id: 1
     };
   }
@@ -19,11 +19,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { loggedIn } = this.state;
+    const { loggedIn, user_id } = this.state;
     return (
       <div className={styles.app}>
         { loggedIn ?
-          <Home /> :
+          <Home user_id={ user_id }/> :
           <LandingPage enterClick={() => this.enterClick()} />
         }
         {/* <footer>

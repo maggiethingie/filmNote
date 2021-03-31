@@ -1,14 +1,22 @@
-/*
 const mongoose = require('mongoose');
 
-const rsvpSchema = mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  email: String,
-  guests: Number
+const entrySchema = mongoose.Schema({
+  entry_id: {
+    type: String,
+    unique: true
+  },
+  user_id: Number,
+  entry: String,
+  Title: String,
+  Year: String,
+  imdbID: String,
+  Type: String,
+  Poster: String
+},
+{
+  timestamps: true
 });
 
-const Rsvp = mongoose.model('Rsvp', rsvpSchema);
+const Entry = mongoose.model('Entry', entrySchema);
 
-module.exports = Rsvp;
-*/
+module.exports = Entry;

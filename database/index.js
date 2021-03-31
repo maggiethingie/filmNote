@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/');
 
-const db = mongoose.connection;
+const mongoURI = 'mongodb://localhost:27017/filmNoteDB';
 
-db.on('error', () => {
-  console.log('mongoose connection error');
-});
+const db = mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
-db.once('open', () => {
-  console.log('mongoose connected successfully');
-});
+db
+  .then(db => console.log(`Connected to: ${mongoURI}`))
+  .catch(err => {
+    console.log(`There was a problem connecting to mongo at: ${mongoURI}`);
+    console.log(err);
+  });
 
 module.exports = db;

@@ -33,7 +33,9 @@
     "body-parser": "^1.18.3",
     "css-loader": "^5.2.0",
     "express": "^4.16.3",
+    "file-loader": "^6.2.0",
     "mongoose": "^5.1.2",
+    "url-loader": "^4.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
