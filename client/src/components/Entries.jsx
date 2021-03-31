@@ -41,7 +41,8 @@ class Entries extends React.Component {
             <h2>Past Entries</h2>
             {entries.map((entry, index) => (
               <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
-                {entry.Title}
+                <img src={entry.Poster} />
+                <div className="entry-title">{entry.Title} ({entry.Year})</div>
               </div>
             ))}
           </div>
