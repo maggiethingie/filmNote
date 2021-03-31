@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 
 const mongoURI = 'mongodb://localhost:27017/filmNoteDB';
 
-const db = mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
+const db = mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+});
 
 db
   .then(db => console.log(`Connected to: ${mongoURI}`))

@@ -3,8 +3,10 @@ const Entry = require('./model');
 const saveEntry = (req, res) => {
   console.log('im inside the saveEntry function!');
   console.log(req.body);
-  let entryDoc = new Entry(req.body);
-  entryDoc.save(req.body, function(err, result) {
+  const { _id } = req.body;
+  //let entryDoc = new Entry(req.body);
+  //entryDoc.save(req.body, function(err, result) {
+  Entry.findOneAndUpdate({ entry_id: req.body.entry_id }, req.body, {upsert: true, setDefaultsOnInsert: true}, function(err, result) {
     if (err) {
       res.sendStatus(400);
     } else {

@@ -74,10 +74,10 @@ class Search extends React.Component {
             <input className="search-bar" onChange={this.handleChange} type="text" />
             <div className="dropdown-menu">
               <div className="dropdown-content results">
-                {results.map(result => {
+                {results.map((result, index) => {
                   const imgURL = result.Poster === 'N/A' ? noImage : result.Poster;
                   return (
-                  <a onClick={(e) => this.handleSubmit(e, result)} key={result.imdbID} className="dropdown-item">
+                  <a onClick={(e) => this.handleSubmit(e, result)} key={index} className="dropdown-item">
                     <img src={imgURL} />
                     {result.Title} ({result.Year})
                   </a>

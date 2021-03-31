@@ -8,12 +8,11 @@ class Home extends React.Component {
     };
   }
 
-
   render() {
     return (
       <div>
         <button className="open-button" onClick={this.props.enterClick}>
-          <h1>Open your filmNote journal</h1>
+          <h1>Login to your filmNote journal</h1>
         </button>
       </div>
     )
