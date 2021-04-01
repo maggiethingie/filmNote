@@ -94,9 +94,9 @@ class Form extends React.Component {
         </div>
         <form>
           <textarea value={ entry } onChange={() => this.onEntryChange(event)} className="textarea" rows="30" cols="20" />
-          { showIdeas ? <Ideas hideIdeas={ this.hideIdeas } /> :
+          { showIdeas ? <Ideas hideIdeas={ this.hideIdeas } /> : null }
             <img onClick={ () => this.onIdeaClick() } className="idea-icon" src="icons/idea.svg" />
-          }
+
           <div className="form-buttons">
             <button onClick={ (event) => this.onEntrySubmit(event) }>Save and Exit</button>
             <button onClick={ (event) => this.onDelete(event) }>Delete entry</button>

@@ -250,6 +250,10 @@ button:hover {
   display: inline-block;
 }
 
+.close-icon {
+  color: white;
+}
+
 .idea-icon:hover, .close-icon:hover {
   transform: scale(1.2, 1.2);
 }
@@ -281,20 +285,38 @@ button:hover {
 
 /* IDEAS */
 .ideas h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  font-family: 'Kiwi Maru', serif;
+  padding-bottom: 15px;
 }
 
 .ideas {
   display: inline-block;
   position: relative;
-  background-color: lightgrey;
+  background-color: #252525;
   font-size: 1.4rem;
+  border: none;
   border-radius: 20px;
-  z-index: 2;
-  padding: 10px;
+  /* z-index: 2; */
+  padding: 30px;
   width: 300px;
-  bottom: 20px;
-  left: 5px;
+  bottom: 150px;
+  left: 30px;
+}
+
+.ideas:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 100px solid #252525;
+  left: 0px;
+  bottom: -60px;
+  transform: rotate(-70deg);
 }
 
 .close-icon {
@@ -305,6 +327,7 @@ button:hover {
 
 .ideas ul {
   list-style: none;
+  color: white;
 }
 
 /* FOOTER */
