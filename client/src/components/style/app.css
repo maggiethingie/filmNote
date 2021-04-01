@@ -84,6 +84,7 @@ button:hover {
 .home .logo {
   color: black;
   display: inline-block;
+  cursor: pointer;
 }
 
 /* SEARCH */
@@ -101,12 +102,29 @@ button:hover {
 }
 
 .search-bar {
-  width: 400px;
+  width: 350px;
   height: 40px;
 }
 
+.dropdown-scroll-container {
+	position: relative;
+	height: 70vh;
+	padding-bottom: 5%;
+	overflow: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*Chrome, Safari and Opera */
+.dropdown-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
 .dropdown-content {
-  overflow: auto;
+	display: grid;
+	height: 100vh;
+	grid: repeat(auto-fill, 350px);
+	grid-gap: 5px;
 }
 
 .dropdown-item {
@@ -114,7 +132,7 @@ button:hover {
   align-items: center;
   height: 100px;
   cursor: pointer;
-  width: 400px;
+  width: 350px;
   border-radius: 5px;
   font-size: 1.5rem;
 }
@@ -293,3 +311,11 @@ button:hover {
   list-style: none;
 }
 
+/* FOOTER */
+footer {
+  position: fixed;
+	width: 100%;
+	bottom: 0;
+	display: block;
+	padding: 0 1%;
+}

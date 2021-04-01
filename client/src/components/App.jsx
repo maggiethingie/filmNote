@@ -8,14 +8,18 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // loggedIn: false,
-      loggedIn: true,
+      loggedIn: false,
+      // loggedIn: true,
       user_id: 1
     };
   }
 
-  enterClick() {
+  logIn() {
     this.setState({ loggedIn: true });
+  }
+
+  logOut() {
+    this.setState({ loggedIn: false });
   }
 
   render() {
@@ -23,13 +27,9 @@ class App extends React.Component {
     return (
       <div className={styles.app}>
         { loggedIn ?
-          <Home user_id={ user_id }/> :
-          <LandingPage enterClick={() => this.enterClick()} />
+          <Home user_id={ user_id } logOut={() => this.logOut()} /> :
+          <LandingPage enterClick={() => this.logIn()} />
         }
-        {/* <footer>
-          <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-          </div>
-        </footer> */}
       </div>
     );
   }
