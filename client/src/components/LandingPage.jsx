@@ -18,7 +18,7 @@ class Home extends React.Component {
           log in
         </button>
         <div className="message">
-          <h1>A journal for film lovers</h1>
+          <h1>The film lover's journal</h1>
         </div>
       </div>
     )

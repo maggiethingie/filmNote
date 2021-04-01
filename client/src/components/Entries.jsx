@@ -46,16 +46,18 @@ class Entries extends React.Component {
             <div className="past-entries-header" onClick={() => this.viewEntries()}> Your Entries</div>
             {
               viewEntries ?
-              <div className="past-entries-body">
-                {entries.map((entry, index) => (
-                  <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
-                    <img src={entry.Poster} />
-                    <div className="entry-title">{entry.Title} ({entry.Year})</div>
-                  </div>
-                ))}
+              <div className="scroll-container">
+                <div className="past-entries-body">
+                  {entries.map((entry, index) => (
+                    <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
+                      <img src={entry.Poster} />
+                      <div className="entry-title">{entry.Title} ({entry.Year})</div>
+                    </div>
+                  ))}
+                </div>
               </div> : null
             }
-            </div>
+          </div>
         }
       </div>
     );

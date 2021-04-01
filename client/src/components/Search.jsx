@@ -73,7 +73,7 @@ class Search extends React.Component {
             <div className="search-text">Search for a title to create a new journal entry</div>
             <input className="search-bar" onChange={this.handleChange} type="text" />
             <div className="dropdown-menu">
-              <div className="dropdown-content results">
+              <div className="dropdown-content">
                 {results.map((result, index) => {
                   const imgURL = result.Poster === 'N/A' ? noImage : result.Poster;
                   return (

@@ -90,8 +90,8 @@ button:hover {
 .search-section {
   display: inline-block;
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 10%;
+  left: 30%;
 }
 
 .search-text {
@@ -101,22 +101,22 @@ button:hover {
 }
 
 .search-bar {
-  width: 300px;
+  width: 400px;
   height: 40px;
 }
 
-.results {
-  overflow-y: scroll;
+.dropdown-content {
+  overflow: auto;
 }
 
 .dropdown-item {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 100px;
   cursor: pointer;
-  width: 300px;
+  width: 400px;
   border-radius: 5px;
-
+  font-size: 1.5rem;
 }
 
 .dropdown-item:hover {
@@ -124,7 +124,7 @@ button:hover {
 }
 
 .dropdown-item img {
-  height: 50px;
+  height: 90px;
   margin-right: 10px;
   border-radius: 5px;
 }
@@ -148,19 +148,32 @@ button:hover {
   cursor: pointer;
   padding-bottom: 30px;
   height: 100px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* background-color: #6e7582; */
   z-index: 2;
   font-family: 'Kiwi Maru', serif;
 }
 
-.past-entries-body {
-  top: 100px;
-  margin-right: 20px;
-  overflow: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;  /* IE and Edge */
+.scroll-container {
+	position: relative;
+	height: 90vh;
+	padding-bottom: 5%;
+	overflow: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/*Chrome, Safari and Opera */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.past-entries-body {
+	display: grid;
+	height: 100vh;
+	grid: repeat(auto-fill, 350px);
+	grid-gap: 15px;
+	justify-content: center;
 }
 
 .past-entry {
