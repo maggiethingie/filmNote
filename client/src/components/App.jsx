@@ -24,6 +24,7 @@ class App extends React.Component {
 
   render() {
     const { loggedIn, user_id } = this.state;
+    console.log(loggedIn);
     return (
       <div className={styles.app}>
         { loggedIn ?

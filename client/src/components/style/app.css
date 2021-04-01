@@ -1,3 +1,6 @@
+/* off-black: #252525 */
+/* off-white: #f6f6f6 */
+
 html {
   font-size: 62.5%;
 }
@@ -282,6 +285,10 @@ button:hover {
   border-radius: 20px;
   border: 1px solid black;
 }
+
+/* .form button:hover {
+  background-color: #f6f6f6;
+} */
 
 /* IDEAS */
 .ideas h3 {

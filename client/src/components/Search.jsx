@@ -33,7 +33,7 @@ class Search extends React.Component {
     event.preventDefault();
     this.setState({ selectionMade: true });
     this.setState({ filmObj });
-    console.log('submit!');
+    this.setState({ results: [] });
   }
 
   debounce(func, delay = 1000) {
@@ -59,6 +59,11 @@ class Search extends React.Component {
     .catch((err) => console.log(err));
   }
 
+  unselect() {
+    this.setState({ selectionMade: false });
+    this.props.updateEntries();
+  }
+
   render() {
     const { user_id } = this.props;
     const { selectionMade, filmObj } = this.state;
@@ -68,7 +73,7 @@ class Search extends React.Component {
     return (
       <div>
         {selectionMade ?
-          <Form filmObj={filmObj} user_id={user_id} entry={''}/> :
+          <Form filmObj={filmObj} user_id={user_id} entry={''} closeForm={() => this.unselect()} /> :
           <div className="search-section">
             <div className="search-text">Search for a title to create a new journal entry</div>
             <input className="search-bar" onChange={this.handleChange} type="text" />

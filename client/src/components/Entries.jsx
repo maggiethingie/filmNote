@@ -16,6 +16,12 @@ class Entries extends React.Component {
     this.getEntries();
   }
 
+  componentDidUpdate() {
+    if (this.props.updateEntries) {
+      this.getEntries();
+    }
+  }
+
   getEntries() {
     axios.get('/entries')
       .then((resp) => {
@@ -30,6 +36,12 @@ class Entries extends React.Component {
     this.props.hideSearch();
   }
 
+  unselect() {
+    this.setState({ selectedEntry: null });
+    this.getEntries();
+    this.props.showSearch();
+  }
+
   viewEntries() {
     const currentState = !this.state.viewEntries;
     this.setState({ viewEntries: currentState });
@@ -40,8 +52,9 @@ class Entries extends React.Component {
     const { user_id } = this.props;
     return (
       <div>
-        { selectedEntry !== null ?
-          <Form filmObj={selectedEntry} user_id={user_id} entry={selectedEntry.entry}/> :
+        { selectedEntry ?
+          <Form filmObj={selectedEntry} user_id={user_id} entry={selectedEntry.entry} closeForm={() => this.unselect()} /> : null
+        }
           <div className="entries-section">
             <div className="past-entries-header" onClick={() => this.viewEntries()}> Your Entries</div>
             {

@@ -29,7 +29,8 @@ class Form extends React.Component {
     this.setState({ entry: event.target.value });
   }
 
-  onEntrySubmit() {
+  onEntrySubmit(event) {
+    event.preventDefault();
     const { entry } = this.state;
     const { filmObj, user_id } = this.props;
     const { Title, Year, imdbID, Type, Poster } = filmObj;
@@ -45,16 +46,17 @@ class Form extends React.Component {
       Poster
     }
     axios.put('/entries', data)
-    .then(() => {})
+    .then(() => this.props.closeForm())
     .catch((err) => {
       console.log(err);
     });
   }
 
-  onDelete() {
+  onDelete(event) {
+    event.preventDefault();
     const { filmObj } = this.props;
     axios.delete(`/entries/${filmObj.entry_id}`)
-    .then(() => {})
+    .then(() => this.props.closeForm())
     .catch((err) => {
       console.log(err);
     });
@@ -93,8 +95,8 @@ class Form extends React.Component {
             <img onClick={ () => this.onIdeaClick() } className="idea-icon" src="icons/idea.svg" />
           }
           <div className="form-buttons">
-            <button onClick={ () => this.onEntrySubmit() }>Save and Exit</button>
-            <button onClick={ () => this.onDelete() }>Delete entry</button>
+            <button onClick={ (event) => this.onEntrySubmit(event) }>Save and Exit</button>
+            <button onClick={ (event) => this.onDelete(event) }>Delete entry</button>
           </div>
         </form>
       </div>
