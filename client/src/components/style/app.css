@@ -24,25 +24,17 @@ background-image: linear-gradient(
   box-sizing: border-box;
 }
 
-/*
-h1, h2 {
-  font-size: 1.5rem;
-}
-*/
-
 button {
   border-radius: 5px;
   cursor: pointer;
   background-color: white;
   padding: 1%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
-/*
 button:hover {
   background-color: lightgrey;
 }
-*/
 
 /* LANDING PAGE */
 .landing-page {
@@ -57,6 +49,7 @@ button:hover {
   padding: 20px;
   color: white;
   font-size: 2rem;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .message {
@@ -83,26 +76,28 @@ button:hover {
 
 /* HOME */
 .home {
-  display: grid;
-  grid-template-columns: 80% / 20%;
-  grid-gap: 50px;
   min-height: 100vh;
   width: 100vw;
-  background-color: #f6f6f6;
+  background-color:#f6f6f6;
 }
 
-.left-column {
-  grid-column: 1 / 2;
-}
-
-.right-column {
-  grid-column: 2 / 3;
+.home .logo {
+  color: black;
+  display: inline-block;
 }
 
 /* SEARCH */
 .search-section {
   display: inline-block;
   position: fixed;
+  top: 25%;
+  left: 25%;
+}
+
+.search-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .search-bar {
@@ -138,23 +133,32 @@ button:hover {
 .entries-section {
   float: right;
   position: relative;
+  padding-left: 20px;
+  /* background-color: #6e7582; */
   /* display: inline-grid;
   grid-template-rows: 10% / 90%; */
 }
 
 .past-entries-header {
-  position: sticky;
-  top: 0;
-  padding: 30px;
+  /* position: sticky;
+  display: inline-block; */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding-bottom: 30px;
   height: 100px;
   font-size: 1.5rem;
-  background-color: #f6f6f6;
+  /* background-color: #6e7582; */
   z-index: 2;
+  font-family: 'Kiwi Maru', serif;
 }
 
 .past-entries-body {
   top: 100px;
-  overflow: auto;
+  margin-right: 20px;
+  overflow: scroll;
+  scrollbar-width: none;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -163,8 +167,9 @@ button:hover {
   display: flex;
   height: 100px;
   cursor: pointer;
-  width: 300px;
+  width: 350px;
   border-radius: 5px;
+  font-size: 1.5rem;
 }
 
 .past-entry img {
@@ -185,14 +190,26 @@ button:hover {
 /* FORM */
 .form {
   position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 10%;
+	left: 20%;
+  width: 1000px;
+  height: 400px;
+}
+
+.form-buttons {
+  display: block;
 }
 
 .textarea {
-  width: 800px;
-  height: 500px;
+  width: 70%;
+  height: 90%;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .idea-icon, .close-icon {
@@ -203,13 +220,7 @@ button:hover {
 }
 
 .idea-icon {
-  float: right;
-}
-
-.close-icon {
-  position: absolute;
-  top: 1%;
-  right: 1%;
+  display: inline-block;
 }
 
 .idea-icon:hover, .close-icon:hover {
@@ -224,26 +235,45 @@ button:hover {
 .heading {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 
 .heading-text {
   font-size: 2rem;
   align-self: flex-end;
+  margin-left: 20px;
+}
+
+.form button {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  padding: 1%;
+  border-radius: 20px;
+  border: 1px solid black;
 }
 
 /* IDEAS */
 .ideas h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .ideas {
-  position: fixed;
+  display: inline-block;
+  position: relative;
   background-color: lightgrey;
+  font-size: 1.4rem;
   border-radius: 20px;
-
+  z-index: 2;
   padding: 10px;
-  right: -325px;
   width: 300px;
+  bottom: 20px;
+  left: 5px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 1%;
+  right: 1%;
 }
 
 .ideas ul {

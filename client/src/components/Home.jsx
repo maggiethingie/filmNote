@@ -21,15 +21,13 @@ class Home extends React.Component {
     const { user_id } = this.props;
     return (
       <div className="home">
-        { !hideSearch ?
-          <div className="left-column">
-            <Search user_id={ user_id } />
-          </div> :
-          null
-        }
-        <div className="right-column">
-          <Entries hideSearch={ this.hideSearch } user_id={ user_id } />
+        <div className="logo">
+          filmNote
         </div>
+        { !hideSearch ?
+          <Search user_id={ user_id } /> : null
+        }
+        <Entries hideSearch={ this.hideSearch } user_id={ user_id } />
       </div>
     )
   }

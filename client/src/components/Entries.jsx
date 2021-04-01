@@ -7,7 +7,8 @@ class Entries extends React.Component {
     super(props);
     this.state = {
       entries: [],
-      selectedEntry: null
+      selectedEntry: null,
+      viewEntries: false
     };
   }
 
@@ -29,16 +30,22 @@ class Entries extends React.Component {
     this.props.hideSearch();
   }
 
+  viewEntries() {
+    const currentState = !this.state.viewEntries;
+    this.setState({ viewEntries: currentState });
+  }
+
   render() {
-    const { entries, selectedEntry } = this.state;
+    const { entries, selectedEntry, viewEntries } = this.state;
     const { user_id } = this.props;
     return (
       <div>
         { selectedEntry !== null ?
           <Form filmObj={selectedEntry} user_id={user_id} entry={selectedEntry.entry}/> :
           <div className="entries-section">
-            <div className="past-entries-header">Past Entries</div>
-            <div className="wrapper">
+            <div className="past-entries-header" onClick={() => this.viewEntries()}> Your Entries</div>
+            {
+              viewEntries ?
               <div className="past-entries-body">
                 {entries.map((entry, index) => (
                   <div key={index} className="past-entry" onClick={() => this.onEntryClick(entry)}>
@@ -46,8 +53,8 @@ class Entries extends React.Component {
                     <div className="entry-title">{entry.Title} ({entry.Year})</div>
                   </div>
                 ))}
-              </div>
-            </div>
+              </div> : null
+            }
             </div>
         }
       </div>
