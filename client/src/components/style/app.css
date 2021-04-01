@@ -118,7 +118,7 @@ button:hover {
 
 .dropdown-content {
 	display: grid;
-	height: 100vh;
+	/* height: 100vh; */
 	grid: repeat(auto-fill, 350px);
 	grid-gap: 5px;
 }
@@ -184,7 +184,7 @@ button:hover {
 
 .past-entries-body {
 	display: grid;
-	height: 100vh;
+	/* height: 100vh; */
 	grid: repeat(auto-fill, 350px);
 	grid-gap: 15px;
 	justify-content: center;
