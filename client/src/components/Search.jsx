@@ -67,13 +67,14 @@ class Search extends React.Component {
   render() {
     const { user_id } = this.props;
     const { selectionMade, filmObj } = this.state;
+    filmObj.entry = '';
     const noImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fp.pngarrow.com%2Fb%2F3065%2F30655323.png&f=1&nofb=1';
     let { results } = this.state;
     if (results === undefined) results = [];
     return (
       <div>
         {selectionMade ?
-          <Form filmObj={filmObj} user_id={user_id} entry={''} closeForm={() => this.unselect()} /> :
+          <Form filmObj={filmObj} user_id={user_id} closeForm={() => this.unselect()} /> :
           <div className="search-section">
             <div className="search-text">Search for a title to create a new journal entry</div>
             <input className="search-bar" onChange={this.handleChange} type="text" />

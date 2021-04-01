@@ -13,13 +13,6 @@ html {
   max-width: 95%;
 }
 
-/*
-background-image: linear-gradient(
-		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)),
-	url(../../../dist/images/vertigo.jpeg);
-*/
-
 * {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -60,7 +53,7 @@ button:hover {
   top: 50%;
 	left: 70%;
 	transform: translate(-50%, -50%);
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
   background-color: transparent;
   border: none;
@@ -285,10 +278,6 @@ button:hover {
   border-radius: 20px;
   border: 1px solid black;
 }
-
-/* .form button:hover {
-  background-color: #f6f6f6;
-} */
 
 /* IDEAS */
 .ideas h3 {

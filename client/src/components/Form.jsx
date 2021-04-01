@@ -7,7 +7,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       showIdeas: false,
-      entry: this.props.entry
+      entry: ''
     }
     this.escFunction = this.escFunction.bind(this);
     this.hideIdeas = this.hideIdeas.bind(this);
@@ -15,9 +15,12 @@ class Form extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.escFunction, false);
-    const { entry } = this.props;
-    if (entry) {
-      this.setState({ entry });
+    this.setState({ entry: this.props.filmObj.entry });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.filmObj !== this.props.filmObj) {
+      this.setState({ entry: this.props.filmObj.entry });
     }
   }
 
@@ -90,7 +93,7 @@ class Form extends React.Component {
           <div className="heading-text">{filmObj.Title} ({filmObj.Year})</div>
         </div>
         <form>
-          <textarea value={ entry } onChange={ () => this.onEntryChange(event) } className="textarea" rows="30" cols="20" />
+          <textarea value={ entry } onChange={() => this.onEntryChange(event)} className="textarea" rows="30" cols="20" />
           { showIdeas ? <Ideas hideIdeas={ this.hideIdeas } /> :
             <img onClick={ () => this.onIdeaClick() } className="idea-icon" src="icons/idea.svg" />
           }

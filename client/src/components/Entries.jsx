@@ -53,7 +53,7 @@ class Entries extends React.Component {
     return (
       <div>
         { selectedEntry ?
-          <Form filmObj={selectedEntry} user_id={user_id} entry={selectedEntry.entry} closeForm={() => this.unselect()} /> : null
+          <Form filmObj={selectedEntry} user_id={user_id} closeForm={() => this.unselect()} /> : null
         }
           <div className="entries-section">
             <div className="past-entries-header" onClick={() => this.viewEntries()}> Your Entries</div>
@@ -71,7 +71,6 @@ class Entries extends React.Component {
               </div> : null
             }
           </div>
-        }
       </div>
     );
   }
