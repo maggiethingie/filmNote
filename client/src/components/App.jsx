@@ -3,33 +3,36 @@ import axios from 'axios';
 import styles from './style/app.css';
 import LandingPage from './LandingPage.jsx';
 import Home from './Home.jsx';
+import GoogleAuth from './GoogleAuth.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false,
-      //loggedIn: true,
-      user_id: 1
+      user: {
+        id: null,
+        email: null,
+        name: null,
+        pic: null
+      },
+      isSignedIn: null
     };
+    this.setUser = this.setUser.bind(this);
   }
 
-  logIn() {
-    this.setState({ loggedIn: true });
-  }
-
-  logOut() {
-    this.setState({ loggedIn: false });
+  setUser(id, email, name, pic, isSignedIn) {
+    this.setState({ user: {id, email, name, pic}, isSignedIn });
   }
 
   render() {
-    const { loggedIn, user_id } = this.state;
-    console.log(loggedIn);
+    const { isSignedIn, user } = this.state;
+    console.log(user);
     return (
       <div className={styles.app}>
-        { loggedIn ?
-          <Home user_id={ user_id } logOut={() => this.logOut()} /> :
-          <LandingPage enterClick={() => this.logIn()} />
+        <GoogleAuth setUser={this.setUser} isSignedIn={isSignedIn} />
+        { isSignedIn ?
+          <Home user={user} /> :
+          <LandingPage />
         }
       </div>
     );

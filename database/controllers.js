@@ -1,4 +1,4 @@
-const Entry = require('./model');
+const Entry = require('./model').Entry;
 
 const saveEntry = (req, res) => {
   const { _id, entry_id } = req.body;
@@ -12,7 +12,8 @@ const saveEntry = (req, res) => {
 };
 
 const getEntries = (req, res) => {
-  Entry.find({})
+  const { user_id } = req.params;
+  Entry.find({user_id})
   .sort({updatedAt:-1})
   .exec((err, docs) => {
     if (err) {

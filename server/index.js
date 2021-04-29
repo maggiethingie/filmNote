@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.put('/entries', saveEntry);
 
-app.get('/entries', getEntries);
+app.get('/entries/:user_id', getEntries);
 
 app.delete('/entries/:entry_id', deleteEntry);
 

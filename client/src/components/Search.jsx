@@ -6,14 +6,6 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // filmObj: {
-      //   Poster: "https://m.media-amazon.com/images/M/MV5BMjAxYmJhMTMtNmZlZi00ZWJlLTlmMjctOTg5ZTg4MzZmOWM2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-      //   Title: "Wild at Heart",
-      //   Type: "movie",
-      //   Year: "1990",
-      //   imdbID: "tt0100935"
-      // },
-      // selectionMade: true,
       filmObj: {},
       selectionMade: false,
       value: '',
@@ -68,7 +60,7 @@ class Search extends React.Component {
     const { user_id } = this.props;
     const { selectionMade, filmObj } = this.state;
     filmObj.entry = '';
-    const noImage = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fp.pngarrow.com%2Fb%2F3065%2F30655323.png&f=1&nofb=1';
+    const noImage = 'images/reel.jpeg';
     let { results } = this.state;
     if (results === undefined) results = [];
     return (

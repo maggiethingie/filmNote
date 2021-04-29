@@ -23,7 +23,7 @@ class Ideas extends React.Component {
     return (
       <div className="ideas">
         <h3>Here are some ideas to get you started!</h3>
-        <img onClick={() => this.hideIdeas()} className="close-icon" src="icons/close.svg" />
+        <img onClick={() => this.hideIdeas()} className="close-icon" src="icons/close.png" />
         <ul>
           {ideas.map((idea, index) => <li key={index} >{idea}</li>)}
         </ul>

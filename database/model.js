@@ -17,6 +17,14 @@ const entrySchema = mongoose.Schema({
   timestamps: true
 });
 
-const Entry = mongoose.model('Entry', entrySchema);
+const userSchema = mongoose.Schema({
+  user_id: Number,
+  user_email: String,
+  user_name: String,
+  user_picURL: String
+});
 
-module.exports = Entry;
+const Entry = mongoose.model('Entry', entrySchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = { Entry, User };

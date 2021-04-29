@@ -23,7 +23,8 @@ class Entries extends React.Component {
   }
 
   getEntries() {
-    axios.get('/entries')
+    const { user_id } = this.props;
+    axios.get(`/entries/${user_id}`)
       .then((resp) => {
         this.setState({
           entries: resp.data

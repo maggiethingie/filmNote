@@ -85,7 +85,7 @@ class Form extends React.Component {
   render() {
     const { filmObj } = this.props;
     const { showIdeas, entry } = this.state;
-    filmObj.Poster = filmObj.Poster === 'N/A' ? 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fp.pngarrow.com%2Fb%2F3065%2F30655323.png&f=1&nofb=1' : filmObj.Poster;
+    filmObj.Poster = filmObj.Poster === 'N/A' ? 'images/reel.jpeg' : filmObj.Poster;
     return (
       <div className="form">
         <div className="heading">
