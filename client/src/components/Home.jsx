@@ -31,8 +31,8 @@ class Home extends React.Component {
     return (
       <div className="home">
         <div style={{top: '1%', left: '1%', position: 'fixed', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-          <div style={{fontSize: '14px', padding: '5px'}}>Hey, {user.name.split(' ')[0]}! </div>
           <img style={{height: '80px', width: '80px'}} src={user.pic}/>
+          <div style={{fontSize: '14px', padding: '5px', fontSize: '2rem', fontFamily: 'Kiwi Maru'}}>Hey, {user.name.split(' ')[0]}! </div>
           <Entries hideSearch={() => this.hideSearch()} showSearch={() => this.showSearch()} user_id={ user.id } updateEntries={updateEntries} />
         </div>
         {/* <div className="logo" onClick={this.props.logOut}>
