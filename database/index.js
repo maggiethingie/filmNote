@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = 'mongodb://localhost:27017/cineLogDB';
+const mongoURI = 'mongodb://localhost:27017/filmNoteDB';
 
 const db = mongoose.connect(mongoURI, {
   useNewUrlParser: true,

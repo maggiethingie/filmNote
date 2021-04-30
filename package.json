@@ -1,16 +1,16 @@
 {
-  "name": "cineLog",
+  "name": "filmNote",
   "version": "1.0.0",
   "description": "an application for movie journaling",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maggiethingie/cineLog.git"
+    "url": "git+https://github.com/maggiethingie/filmNote.git"
   },
   "bugs": {
-    "url": "https://github.com/maggiethingie/cineLog/issues"
+    "url": "https://github.com/maggiethingie/filmNote/issues"
   },
-  "homepage": "https://github.com/maggiethingie/cineLog#readme",
+  "homepage": "https://github.com/maggiethingie/filmNote#readme",
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",

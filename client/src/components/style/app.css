@@ -87,8 +87,9 @@ button:hover {
 .search-section {
   display: inline-block;
   position: fixed;
-  top: 10%;
-  left: 30%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .search-text {
@@ -147,7 +148,7 @@ button:hover {
 .entries-section {
   float: right;
   position: relative;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   overflow: hidden;
   /* background-color: #6e7582; */
   /* display: inline-grid;
@@ -157,12 +158,13 @@ button:hover {
 .past-entries-header {
   /* position: sticky;
   display: inline-block; */
-  position: fixed;
-  top: 100px;
-  right: 20px;
+  /* position: fixed;
+  top: 15%;
+  left: 1%; */
+  padding-top: 30px;
   cursor: pointer;
-  padding-bottom: 30px;
-  height: 100px;
+  /* padding-bottom: 30px; */
+  /* height: 100px; */
   font-size: 2rem;
   /* background-color: #6e7582; */
   z-index: 2;
@@ -170,8 +172,9 @@ button:hover {
 }
 
 .scroll-container {
-	position: relative;
-  top: 145px;
+	/* position: relative;
+  top: 18%;
+  left: 1%; */
 	height: 90vh;
 	padding-bottom: 5%;
 	overflow: scroll;

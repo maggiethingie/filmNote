@@ -46,14 +46,14 @@ class GoogleAuth extends React.Component {
 			return null;
 		} else if (isSignedIn) {
 			return (
-				<button onClick={this.onSignOut} style={{position: 'fixed', top: '1%', left: '1%', border: 'none', color: '#f6f6f6', backgroundColor: '#252525', padding: '10px'}}>
+				<button onClick={this.onSignOut} style={{position: 'fixed', top: '1%', right: '1%', border: 'none', color: '#f6f6f6', backgroundColor: '#252525', padding: '10px'}}>
 					<ion-icon name="logo-google"></ion-icon>
 						&nbsp;&nbsp;&nbsp;&nbsp;Sign Out
 				</button>
 			);
 		} else {
 			return (
-				<button onClick={this.onSignIn} style={{position: 'fixed', top: '1%', left: '1%', border: 'none', color: '#f6f6f6', backgroundColor: 'transparent', padding: '10px'}}>
+				<button onClick={this.onSignIn} style={{position: 'fixed', top: '1%', right: '1%', border: 'none', color: '#f6f6f6', backgroundColor: 'transparent', padding: '10px'}}>
 					<ion-icon name="logo-google"></ion-icon>
 						&nbsp;&nbsp;&nbsp;&nbsp;Sign In with Google
 				</button>

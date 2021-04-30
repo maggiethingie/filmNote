@@ -30,17 +30,17 @@ class Home extends React.Component {
     const { user } = this.props;
     return (
       <div className="home">
-        <div style={{top: '1%', right: '10%', position: 'fixed'}}>
+        <div style={{top: '1%', left: '1%', position: 'fixed', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
           <div style={{fontSize: '14px', padding: '5px'}}>Hey, {user.name.split(' ')[0]}! </div>
-          <img src={user.pic}/>
+          <img style={{height: '80px', width: '80px'}} src={user.pic}/>
+          <Entries hideSearch={() => this.hideSearch()} showSearch={() => this.showSearch()} user_id={ user.id } updateEntries={updateEntries} />
         </div>
         {/* <div className="logo" onClick={this.props.logOut}>
-          cineLog
+          filmNote
         </div> */}
         { !hideSearch ?
           <Search user_id={ user.id } updateEntries={() => this.updateEntries()} /> : null
         }
-        <Entries hideSearch={() => this.hideSearch()} showSearch={() => this.showSearch()} user_id={ user.id } updateEntries={updateEntries} />
         <footer>
           <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
           <a href="http://www.omdbapi.com/"> /  This application uses the OMDb API http://www.omdbapi.com/</a>
