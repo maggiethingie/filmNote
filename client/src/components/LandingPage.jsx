@@ -11,9 +11,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="landing-page">
-        {/* <div className="logo">
+        <div className="logo">
           filmNote
-        </div> */}
+        </div>
         {/* <button className="login-button" onClick={this.props.enterClick}>
           log in
         </button> */}

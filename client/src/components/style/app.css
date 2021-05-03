@@ -26,6 +26,7 @@ button {
   background-color: white;
   padding: 1%;
   font-size: 1.5rem;
+  outline: none;
 }
 
 button:hover {
@@ -105,7 +106,7 @@ button:hover {
 
 .dropdown-scroll-container {
 	position: relative;
-	height: 70vh;
+	height: 60vh;
 	padding-bottom: 5%;
 	overflow: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -161,7 +162,7 @@ button:hover {
   /* position: fixed;
   top: 15%;
   left: 1%; */
-  padding-top: 30px;
+  /* padding-top: 30px; */
   cursor: pointer;
   /* padding-bottom: 30px; */
   /* height: 100px; */
@@ -175,7 +176,7 @@ button:hover {
 	/* position: relative;
   top: 18%;
   left: 1%; */
-	height: 90vh;
+	height: 70vh;
 	padding-bottom: 5%;
 	overflow: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -222,8 +223,9 @@ button:hover {
 /* FORM */
 .form {
   position: fixed;
-	top: 10%;
-	left: 20%;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   width: 1000px;
   height: 400px;
 }

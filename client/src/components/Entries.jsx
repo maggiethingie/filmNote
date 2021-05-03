@@ -57,7 +57,7 @@ class Entries extends React.Component {
           <Form filmObj={selectedEntry} user_id={user_id} closeForm={() => this.unselect()} /> : null
         }
           <div className="entries-section">
-            <div className="past-entries-header" onClick={() => this.viewEntries()}>your entries...</div>
+            <div className="past-entries-header" onClick={() => this.viewEntries()}>View your entries</div>
             {
               viewEntries ?
               <div className="scroll-container">
