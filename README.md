@@ -1,4 +1,5 @@
 # filmNote: an application for film journaling
+![landingpage][landingpage]
 
 ## Decription
 This application allows a user to login with Google. The user may search for a film to create a new entry and view, edit, or delete past entries. The user's entries appear with the most recently updated on top. The application provides ideas to help the user get started with their entry.
@@ -39,6 +40,7 @@ npm start
 
 created by Maggie Aytac
 
+[landingpage]: landingpage.png
 [login]: login.gif
 [searchcreate]: searchcreate.gif
 [editdelete]: editdelete.gif
