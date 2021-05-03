@@ -309,8 +309,8 @@ button:hover {
   z-index: 2;
   padding: 30px;
   width: 300px;
-  bottom: 37%;
-  left: 60%;
+  bottom: -30%;
+  right: -2%;
   /*
   position: relative
   bottom: 150px;
