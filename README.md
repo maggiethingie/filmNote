@@ -1,4 +1,4 @@
-# filmNote: an application for personal film journaling
+# filmNote: an application for film journaling
 
 ## Decription
 This application allows a user to login with Google. The user may search for a film to create a new entry and view, edit, or delete past entries. The user's entries appear with the most recently updated on top. The application provides ideas to help the user get started with their entry.
@@ -13,6 +13,7 @@ This application allows a user to login with Google. The user may search for a f
 ![editdelete][editdelete]
 
 ## Suggestions for Writing Ideas
+![ideas][ideas]
 
 ## Technologies Used
 - Google Authentication
@@ -41,4 +42,5 @@ created by Maggie Aytac
 [login]: login.gif
 [searchcreate]: searchcreate.gif
 [editdelete]: editdelete.gif
+[ideas]: ideas.gif
 
